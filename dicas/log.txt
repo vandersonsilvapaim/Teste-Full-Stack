@@ -1,0 +1,55 @@
+Adicionando o driver ojdbc7.jar ao seu repositório local:
+
+
+mvn install:install-file -Dfile={Path/to/your/ojdbc7.jar} -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+
+
+"C:\Program Files\Java\jdk1.8.0_151\bin\java" -Dmaven.multiModuleProjectDirectory=C:\workspace\TESTE\teste -Dmaven.home=C:\maven -Dclassworlds.conf=C:\maven\bin\m2.conf -Didea.launcher.port=7533 "-Didea.launcher.bin.path=C:\JetBrains\IntelliJ IDEA 14.0.4\bin" -Dfile.encoding=UTF-8 -classpath "C:\maven\boot\plexus-classworlds-2.5.2.jar;C:\JetBrains\IntelliJ IDEA 14.0.4\lib\idea_rt.jar" com.intellij.rt.execution.application.AppMain org.codehaus.classworlds.Launcher -Didea.version=14.0.4 install:install-file -Dfile=C:/workspace/TESTE/dicas/ojdbc7.jar -DgroupId=com.oracle -DartifactId=ojdbc7 -Dversion=12.1.0 -Dpackaging=jar
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] --------------------------< com.teste:teste >---------------------------
+[INFO] Building teste 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-install-plugin:2.5.2:install-file (default-cli) @ teste ---
+[INFO] pom.xml not found in ojdbc7.jar
+[INFO] Installing C:\workspace\TESTE\dicas\ojdbc7.jar to C:\Users\vande\.m2\repository\com\oracle\ojdbc7\12.1.0\ojdbc7-12.1.0.jar
+[INFO] Installing C:\Users\vande\AppData\Local\Temp\mvninstall8196005859332825334.pom to C:\Users\vande\.m2\repository\com\oracle\ojdbc7\12.1.0\ojdbc7-12.1.0.pom
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 1.633 s
+[INFO] Finished at: 2018-12-10T16:22:30-02:00
+[INFO] ------------------------------------------------------------------------
+
+Process finished with exit code 0
+
+
+
+------------------------------------------------------------------------------
+
+create tablespace TESTE_DATA_128K datafile 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TESTE_DATA_128K01.dbf'  size 500m autoextend on next 200m maxsize 32000m
+sql> create tablespace TESTE_INDX_128K datafile 'C:\ORACLEXE\APP\ORACLE\ORADATA\XE\TESTE_INDX_128K01.dbf'  size 500m autoextend on next 200m maxsize 32000m
+[2018-12-11 17:13:14] completed in 8219 ms
+sql> drop user "USR_TESTE" CASCADE
+[2018-12-11 17:13:23] completed in 8614 ms
+[2018-12-11 17:13:23] completed in 171 ms
+sql> create user "USR_TESTE" identified by TESTE
+[2018-12-11 17:13:27] completed in 19 ms
+sql> ALTER USER "USR_TESTE"
+DEFAULT TABLESPACE "TESTE_DATA_128K"
+TEMPORARY TABLESPACE "TEMP"
+ACCOUNT UNLOCK
+[2018-12-11 17:13:41] completed in 6 ms
+sql> ALTER USER "USR_TESTE" QUOTA UNLIMITED ON TESTE_DATA_128K
+[2018-12-11 17:13:46] completed in 7 ms
+sql> ALTER USER "USR_TESTE" QUOTA UNLIMITED ON TESTE_INDX_128K
+[2018-12-11 17:13:49] completed in 3 ms
+sql> grant connect,resource,dba to USR_TESTE
+sql> grant all PRIVILEGES TO USR_TESTE
+[2018-12-11 17:13:57] completed in 15 ms
+sql> grant sysdba to USR_TESTE
+[2018-12-11 17:13:57] completed in 326 ms
+sql> grant all PRIVILEGES TO USR_TESTE
+[2018-12-11 17:14:03] completed in 115 ms
+

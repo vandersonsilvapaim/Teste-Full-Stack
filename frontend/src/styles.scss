@@ -1,0 +1,168 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/deeppurple-amber';
+
+body {
+    background-color: #f7f7f7;
+}
+
+.mat-fab.mat-primary, .mat-flat-button.mat-primary, .mat-mini-fab.mat-primary, .mat-raised-button.mat-primary {
+    background-color: #033f83;
+}
+ 
+/* Tablet format and lower */
+@media only screen and (max-width: 1024px) {
+
+}
+
+/* Mobile format and lower */
+@media only screen and (max-width: 768px) {
+
+}
+
+/* Mobile format landscape (wide) */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+}
+
+/* Mobile format portrait (small) */
+@media only screen and (max-width: 320px) {
+
+}
+ 
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: #033f83
+}
+
+.mat-primary .mat-pseudo-checkbox-checked,
+.mat-primary .mat-pseudo-checkbox-indeterminate {
+    background: #033f83
+}
+
+.mat-badge-content {
+    color: #fff;
+    background: #033f83
+}
+
+.mat-button.mat-primary,
+.mat-icon-button.mat-primary,
+.mat-stroked-button.mat-primary {
+    color: #033f83
+}
+
+.mat-button.mat-primary .mat-button-focus-overlay,
+.mat-icon-button.mat-primary .mat-button-focus-overlay,
+.mat-stroked-button.mat-primary .mat-button-focus-overlay {
+    background-color: #033f83
+}
+
+.mat-fab.mat-primary,
+.mat-flat-button.mat-primary,
+.mat-mini-fab.mat-primary,
+.mat-raised-button.mat-primary {
+    background-color: #033f83
+}
+
+.mat-checkbox-checked.mat-primary .mat-checkbox-background,
+.mat-checkbox-indeterminate.mat-primary .mat-checkbox-background {
+    background-color: #033f83
+}
+
+.mat-checkbox:not(.mat-checkbox-disabled).mat-primary .mat-checkbox-ripple .mat-ripple-element {
+    background-color: #033f83
+}
+
+.mat-chip.mat-standard-chip.mat-chip-selected.mat-primary {
+    background-color: #033f83;
+    color: #fff
+}
+
+.mat-calendar-body-selected {
+    background-color: #033f83;
+    color: #fff
+}
+
+.mat-datepicker-toggle-active {
+    color: #033f83
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: #033f83
+}
+
+.mat-form-field.mat-focused .mat-form-field-ripple {
+    background-color: #033f83
+}
+
+.mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+    color: #033f83
+}
+
+.mat-icon.mat-primary {
+    color: #033f83
+}
+
+.mat-input-element {
+    caret-color: #033f83
+}
+
+.mat-progress-bar-fill::after {
+    background-color: #033f83
+}
+
+.mat-progress-spinner circle,
+.mat-spinner circle {
+    stroke: #033f83
+}
+
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #033f83
+}
+
+.mat-radio-button.mat-primary .mat-radio-inner-circle,
+.mat-radio-button.mat-primary .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple),
+.mat-radio-button.mat-primary.mat-radio-checked .mat-radio-persistent-ripple,
+.mat-radio-button.mat-primary:active .mat-radio-persistent-ripple {
+    background-color: #033f83
+}
+
+.mat-form-field.mat-focused.mat-primary .mat-select-arrow {
+    color: #033f83
+}
+
+.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+    background-color: #033f83
+}
+
+.mat-slide-toggle.mat-primary.mat-checked:not(.mat-disabled) .mat-ripple-element {
+    background-color: #033f83
+}
+
+.mat-primary .mat-slider-thumb,
+.mat-primary .mat-slider-thumb-label,
+.mat-primary .mat-slider-track-fill {
+    background-color: #033f83
+}
+
+.mat-step-header .mat-step-icon-selected,
+.mat-step-header .mat-step-icon-state-done,
+.mat-step-header .mat-step-icon-state-edit {
+    background-color: #033f83;
+    color: #fff
+}
+
+.mat-tab-group.mat-primary .mat-ink-bar,
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #033f83
+}
+
+.mat-tab-group.mat-background-primary .mat-tab-header,
+.mat-tab-group.mat-background-primary .mat-tab-links,
+.mat-tab-nav-bar.mat-background-primary .mat-tab-header,
+.mat-tab-nav-bar.mat-background-primary .mat-tab-links {
+    background-color: #033f83
+}
+
+.mat-toolbar.mat-primary {
+    background: #033f83;
+    color: #fff
+}

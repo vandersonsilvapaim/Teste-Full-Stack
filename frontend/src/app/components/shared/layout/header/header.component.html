@@ -1,0 +1,105 @@
+<!-- Sidenav -->
+  <mat-sidenav mode="over" opened="false"  #sidenav class="sidenav">
+
+  <img [src]="octocat" (click)="sidenav.close()">
+
+  <div class="menu-link">
+    <button mat-button routerLink="/home" (click)="sidenav.close()">
+      <mat-icon class="home">home</mat-icon>
+      <span>Inicio</span>
+    </button> 
+  </div>
+  <div class="menu-link" (click)="sidenav.close(); medicamentos()">
+    <button mat-button routerLink="/medicamentos" (click)="sidenav.close(); medicamentos()">
+      <mat-icon class="medicamentos">medicamentos</mat-icon>
+      <span>Medicamentos</span>
+    </button>
+  </div>
+
+</mat-sidenav>
+
+<!-- Header -->
+<mat-toolbar color="primary">
+
+  <!-- Sidenav activate -->
+  <div class="sidenav-content">
+    <button type="button" mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+    </button>
+  </div>
+
+  <!-- Menu -->
+  <span class="spacer"></span>
+
+    <app-date-pipe></app-date-pipe>
+
+  <span class="spacer-light"></span>
+ 
+</mat-toolbar>
+<!-- 
+<mat-tab-group>
+  <mat-tab label="{{item.label}}" *ngFor="let item of menuItems; let i=index">
+  </mat-tab>
+
+  <mat-tab label="Missão backend">
+      <div id="content">
+        <mat-card>
+          <h1>Missão backend</h1>
+          - Desenvolver uma API JSON RESTful em Java, que utilize todos os métodos (GET, POST, PUT, PATCH, DELETE).
+O teste unitário da API (Bônus ⭐️)
+
+Especificação
+Monte uma base de Medicamentos com os seguintes itens :
+
+nome, fabricante, validade, perco, data_criacao e data_atualizacao
+Utilize Oracle para armazenar os dados que a API irá consumir.
+
+API endpoints
+GET /medicamentos
+
+Retorna todos os medicamentos
+
+GET /medicamentos/find
+
+Retorna os medicamentos de acordo com o termo passado por QueryParam 
+
+GET /medicamentos/{id}
+
+Retorna o medicamento
+
+POST /medicamentos
+
+Adiciona um novo medicamento
+
+PUT /medicamentos/{id}
+
+Atualiza os dados de um medicamento
+
+DELETE /medicamentos/{id}
+
+Apaga o medicamento
+
+        
+        </mat-card>
+      </div>
+  </mat-tab>
+  
+  <mat-tab label="Missão frontend">
+      <div id="content">
+          <mat-card>
+            <h1>Missão frontend</h1>
+            <p>Desenvolver uma Aplicação Frontend de acordo com o Getting started do Angular. </p>
+            <p>O teste unitário da Aplicação (Bônus ⭐️) </p>
+            <br/>
+            <h2>Especificação</h2>
+            <p> Criar uma tela que tenha...</p>
+            <p> Listagem de medicamentos</p>
+            <p> Detalhe do medicamento</p>
+            <p> Busca</p>
+            <p> Formulário de novo/edição de medicamentos</p>          
+          </mat-card>
+        </div>
+  </mat-tab>
+ 
+
+</mat-tab-group> -->

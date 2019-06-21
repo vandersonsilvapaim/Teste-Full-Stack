@@ -1,0 +1,29 @@
+----------------------------------------------------------------------------------------------------------------------------
+-----------------------------REQUISIÇÕES-CONFIRMATÓRIAS-DA-API--------------------------------------------------------------
+----------------------------------------------------------------------------------------------------------------------------
+
+curl -i -X POST -d '{"id":"","nome":"a", "fabricante":"x", "validade":1545650820408, "preco":10.00, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos
+
+curl -i -X POST -d '{"id":"","nome":"b", "fabricante":"x", "validade":1545650820408, "preco":10.00, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos
+
+curl -i -X POST -d '{"id":"","nome":"c", "fabricante":"x", "validade":1545650820408, "preco":10.00, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos
+
+curl -i -X POST -d '{"id":"","nome":"d", "fabricante":"x", "validade":1545650820408, "preco":10.00, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos
+
+curl -i -X POST -d '{"id":"","nome":"e", "fabricante":"x", "validade":1545650820408, "preco":10.00, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos
+
+
+curl -i -X PUT -d '{"id":"1","nome":"v", "fabricante":"x", "validade":1545650820408, "preco":20.50, "data_criacao":1545650820408, "data_atualizacao":1545650820408}' -H "Accept:application/json;charset=UTF-8" -H "Content-Type:application/json;charset=UTF-8" http://localhost:80/medicamentos/1
+
+curl -i -X GET -H "Accept:application/json;charset=UTF-8" 'http://localhost:80/medicamentos'
+
+curl -i -X GET -H "Accept:application/json;charset=UTF-8" 'http://localhost/medicamentos/find?fabricante=x&validade=11111&nome=v'
+
+curl -i -X GET -H "Accept:application/json;charset=UTF-8" 'http://localhost:80/medicamentos/find?nome=v&&fabricante=x'
+
+curl -i -X GET -H "Accept:application/json;charset=UTF-8" 'http://localhost:80/medicamentos/1'
+
+curl -i -X DELETE -H "Accept:application/json;charset=UTF-8" 'http://localhost:80/medicamentos/1'
+
+----------------------------------------------------------------------------------------------------------------------------
+ 

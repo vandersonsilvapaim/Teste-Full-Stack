@@ -1,0 +1,113 @@
+<div id="content">
+  <mat-card>
+    <h1>Medicamentos</h1>
+
+    <hr>
+
+    <mat-form-field class="full-width">
+      <input matInput placeholder="Digite o nome do medicamento" type="text" [(ngModel)]="nome" />
+    </mat-form-field>
+    <button mat-raised-button (click)="find()" matTooltip="Buscar medicamentos" aria-label="Busca de medicamentos por nome, mas se não hover valor como parametro é retornado todos os medicamentos.">
+      Buscar
+    </button>
+    <br>
+    <mat-toolbar>Medicamento: {{nome}}</mat-toolbar>
+    <hr>
+
+    <table mat-table [dataSource]="dataSource" multiTemplateDataRows class="mat-elevation-z8">
+
+      <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
+        <th mat-header-cell *matHeaderCellDef>
+          <button id="adicionar" matTooltip="Adicionar medicamentos" mat-icon-button (click)="adicionarDialog()" *ngIf="column == 'start'">
+            <mat-icon aria-label="Adicionar">note_add</mat-icon>
+          </button>
+          <h6 *ngIf="column != 'start'">{{column}}</h6>
+        </th>
+        <td mat-cell *matCellDef="let element">
+          <button id="remover" matTooltip="Remover medicamentos" mat-icon-button (click)="removerDialog(element)" *ngIf="column == 'start'">
+            <mat-icon aria-label="Remover">restore_from_trash</mat-icon>
+          </button>
+          <button id="atualizar" matTooltip="Atualizar medicamentos" mat-icon-button (click)="atualizarDialog(element)"
+            *ngIf="column == 'start'">
+            <mat-icon aria-label="Atualizar">restore_page</mat-icon>
+          </button>
+          <p *ngIf="column != 'start'">{{element[column]}}</p>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="expandedDetail">
+        <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
+          <div class="example-element-detail" [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
+            <form class="example-form">
+              <table class="example-full-width" cellspacing="0">
+
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Medicamento: " disabled value="{{element.nome}}">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Fabricante" disabled value="{{element.fabricante}}">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Preço" type="number" value="{{element.preco}}" disabled>
+                      <span matPrefix>R$: &nbsp;</span>
+                    </mat-form-field>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Data de validade" disabled value="{{element.validade | date}}">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Data da criação" disabled value="{{element.data_criacao | date}}">
+                    </mat-form-field>
+                  </td>
+                  <td>
+                    <mat-form-field class="example-full-width">
+                      <input matInput placeholder="Data da atualização" disabled value="{{element.data_atualizacao | date}}">
+                    </mat-form-field>
+                  </td>
+                </tr>
+
+              </table>
+            </form>
+          </div>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+      <tr mat-row *matRowDef="let element; columns: columnsToDisplay;" class="example-element-row"
+        [class.example-expanded-row]="expandedElement === element" (click)="expandedElement = expandedElement === element ? null : element">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+    </table>
+
+    <app-json-pipe [request]="request" [response]="response"></app-json-pipe>
+
+
+    <!-- <h3>Data da Criação</h3>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Digite uma data">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <h3>Data da Atualização</h3>
+    <mat-form-field>
+      <input matInput [matDatepicker]="picker" placeholder="Digite uma data">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+ 
+ -->
+
+  </mat-card>
+</div>
